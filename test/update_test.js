@@ -44,4 +44,10 @@ describe('updating records', () => {
     done
     );
   })
+
+  it('A model class can find a record with an ID and update', done => {
+    assertName(
+    User.findByIdAndUpdate(joe._id, { name: 'Alex' }),
+    done)
+  })
 })
