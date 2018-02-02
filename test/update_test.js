@@ -26,7 +26,15 @@ describe('updating records', () => {
   })
 
   it('A model instance can update', (done) => {
-
     assertName(joe.update({name:'Alex'}), done)
+  })
+
+  it('A model class can update', (done) => {
+    assertName(
+      User.update(
+        { name: 'Joe' },
+        { name: 'Alex' }
+      ),
+    done)
   })
 })
