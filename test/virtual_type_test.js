@@ -12,6 +12,7 @@ describe('Virtual types',() => {
       .then((user) => {
         assert(joe.postCount === 1);
         done();
+        
       })
   });
 })
