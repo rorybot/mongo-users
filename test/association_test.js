@@ -49,10 +49,14 @@ describe('Assocations', () => {
       }
     })
     .then((user) => {
-      assert(user.name === 'Joe');
-      assert(user.blogPosts[0].title === 'Rory is great');
-      assert(user.blogPosts[0].comments[0].content === 'I disagree! He is the worst!');
-      assert(user.blogPosts[0].comments[0].user.name === 'Joe')
+
+      var inspections = [user.name, user.blogPosts[0].title, user.blogPosts[0].comments[0].content, user.blogPosts[0].comments[0].user.name]
+      var [username, blogpostTitle, blogpostComment, blogpostCommentUsername] = inspections
+
+      assert(username === 'Joe');
+      assert(blogpostTitle === 'Rory is great');
+      assert(blogpostComment === 'I disagree! He is the worst!');
+      assert(blogpostCommentUsername === 'Joe')
 
       done()
     })
